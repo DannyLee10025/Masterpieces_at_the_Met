@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Masterpieces at the Met Artist Quiz</title>
+<link href="_css/site.css" rel="stylesheet">
+<script>
+var score=0;  //storing number of answers quiz-taker gets right
+var i;
+var questions = [
+ ['Where is Pieter Bruegel from?', 'The Netherlands'],
+ ['In what area of Italy did Caravaggio receive his training?','Lombardy'],
+ ['In Poussin’s painting, “The Abduction of the Sabine Women”, who is the figure in the top left in the red cloak supposed to represent?', 'Romulus'],
+ ['What group of islands did Winslow Homer go to that inspired him to paint “The Gulf Stream”?', 'The Bahamas'],
+ ['What state was Jackson Pollock born in?', 'Wyoming']
+];
+function askQuestion(question) {
+ var answer = prompt(question,'');  //stores whatever user types in the variable answer
+
+    if (answer == questions[i][1] && answer != null && answer != "") {
+        alert('Correct!');
+        score++;  //user's score increases by 1
+    } else {
+        alert('Sorry. The correct answer is ' + questions[i][1]);
+    }
+}
+for (i=0; i<questions.length; i++) {  //the loop
+ askQuestion(questions[i][0]);
+}
+
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+<div class="header">
+	<p class="logo">Masterpieces at the Metropolitan Museum of Art</p>
+    
+</div>
+<div class="content">
+	<div class="main">
+<h1>How Well Do You Know the Artists?  Quiz</h1>
+		<script>
+		var message = 'You got ' + score;
+		message += ' out of ' + questions.length;
+		message += ' questions correct.';
+		document.write('<p>' + message + '</p>');
+		</script> </div>
+</div>
+
+<div class="back to main">
+	<p>Go back to <a href="Index.html">main page</a></p>
+</div>
+
+<div class="footer">
+<p>Danny Lee - Javascript & jQuery - Spring 2013</p>
+</div>
+</div>
+</body>
+</html>
